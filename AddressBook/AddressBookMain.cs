@@ -57,17 +57,58 @@ namespace AddressBook
                     "\nMobile : " + contact.PhoneNumber + "\nZIPCode : " + contact.Zip + ".");
             }
         }
-        public void EditContact(string name)
+        public void EditContact()
         {
+            string name = Console.ReadLine();
+
             foreach (var contact in addressBook)
             {
                 if (contact.FirstName.Equals(name))
                 {
-                    Console.WriteLine("Enter option to update : ");
+                    Console.WriteLine("Enter option to update : 1. Last Name\n2. Address\n3. City\n4. State\n5. Zip\n6. Phone Number\n7. Email\n8. Exit ");
+                    int option = Convert.ToInt32(Console.ReadLine());
+                    switch (option)
+                    {
+                        case 1:
+                            string lastName = Console.ReadLine();
+                            contact.LastName = lastName;
+                            break;
+                        case 2:
+                            string address = Console.ReadLine();
+                            contact.Address = address;
+                            break;
+                        case 3:
+                            string city = Console.ReadLine();
+                            contact.City = city;
+                            break;
+                        case 4:
+                            string state = Console.ReadLine();
+                            contact.State = state;
+                            break;
+                        case 5:
+                            string zipcode = Console.ReadLine();
+                            contact.Zip = zipcode;
+                            break;
+                        case 6:
+                            string phoneNumber = Console.ReadLine();
+                            contact.PhoneNumber = phoneNumber;
+                            break;
+                        case 7:
+                            string mailId = Console.ReadLine();
+                            contact.Email = mailId;
+                            break;
+                        case 8:
+                            Console.WriteLine("you chose not to edit the contact");
+                            break;
+
+                    }
+                }
+                Display();
+                    
                 }
             }
         }
 
 
-    }
+    
 }

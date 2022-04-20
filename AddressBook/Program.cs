@@ -10,6 +10,7 @@ namespace AddressBook
             Console.WriteLine("1. Add Contact\n2. Add Contact To Adress Book\n3. End Program ");
             Contact contact = new Contact();
             AddressBookMain addContact = new AddressBookMain();
+           
             while (end)
             {
                 Console.WriteLine("Choose program to execute : ");
@@ -45,6 +46,9 @@ namespace AddressBook
                         addContact.AddContactToAddressBook(contact);
                         break;
                     case 3:
+                        addContact.EditContact();
+                        break;
+                    case 4:
                         end = false;
                         break;
                     default:
