@@ -7,7 +7,7 @@ namespace AddressBook
         {
             Console.WriteLine("Welcome To Adress Book Program");
             bool end = true;
-            Console.WriteLine("1. Add Contact\n2. Add Contact To Adress Book\n3. End Program ");
+            Console.WriteLine("1. Add Contact\n2. Add Contact To Adress Book\n3. Edit A Contact\n4. Delete Contact\n5. End Program ");
             Contact contact = new Contact();
             AddressBookMain addContact = new AddressBookMain();
            
@@ -49,6 +49,9 @@ namespace AddressBook
                         addContact.EditContact();
                         break;
                     case 4:
+                        addContact.DeleteTheContact();
+                        break;
+                    case 5:
                         end = false;
                         break;
                     default:

@@ -35,7 +35,7 @@ namespace AddressBook
                 PhoneNumber = "9424777312",
                 Email = "viveksingh@gmail.com"
             };
-            
+
 
             addressBook.Add(contact1);
             addressBook.Add(contact2);
@@ -46,8 +46,8 @@ namespace AddressBook
             addressBook.Add(contact);
             Display();
         }
-       
-        
+
+
         public void Display()
         {
             foreach (var contact in addressBook)
@@ -104,10 +104,24 @@ namespace AddressBook
                     }
                 }
                 Display();
-                    
-                }
+
             }
         }
+        public void DeleteTheContact()
+        {
+            string name = Console.ReadLine();
+            Contact delete = new Contact();
+            foreach (var contact in addressBook)
+            {
+                if (contact.FirstName.Equals(name))
+                {
+                    delete = contact;
+                }
+            }
+            addressBook.Remove(delete);
+            Display();
+        }
+    }
 
 
     
