@@ -41,32 +41,10 @@ namespace AddressBook
             addressBook.Add(contact2);
 
         }
-        public void CreateContact()
+        public void AddContactToAddressBook(Contact contact)
         {
-            Console.WriteLine("Enter Your First Name : ");
-            contact.FirstName = Console.ReadLine();
-
-            Console.WriteLine("Enter Your Last Name : ");
-            contact.LastName = Console.ReadLine();
-
-            Console.WriteLine("Enter Your Address : ");
-            contact.Address = Console.ReadLine();
-
-            Console.WriteLine("Enter Your City : ");
-            contact.City = Console.ReadLine();
-
-            Console.WriteLine("Enter Your State : ");
-            contact.State = Console.ReadLine();
-
-            Console.WriteLine("Enter Your Zip Code : ");
-            contact.Zip = Console.ReadLine();
-
-            Console.WriteLine("Enter Your Phone Number : ");
-            contact.PhoneNumber = Console.ReadLine();
-
-            Console.WriteLine("Enter Your Email : ");
-            contact.Email = Console.ReadLine();
             addressBook.Add(contact);
+            Display();
         }
        
         
@@ -79,7 +57,16 @@ namespace AddressBook
                     "\nMobile : " + contact.PhoneNumber + "\nZIPCode : " + contact.Zip + ".");
             }
         }
-
+        public void EditContact(string name)
+        {
+            foreach (var contact in addressBook)
+            {
+                if (contact.FirstName.Equals(name))
+                {
+                    Console.WriteLine("Enter option to update : ");
+                }
+            }
+        }
 
 
     }

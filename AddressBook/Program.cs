@@ -17,10 +17,32 @@ namespace AddressBook
                 switch (option)
                 {
                     case 1:
-                        addContact.CreateContact();
+                        Console.WriteLine("Enter Your First Name : ");
+                        contact.FirstName = Console.ReadLine();
+
+                        Console.WriteLine("Enter Your Last Name : ");
+                        contact.LastName = Console.ReadLine();
+
+                        Console.WriteLine("Enter Your Address : ");
+                        contact.Address = Console.ReadLine();
+
+                        Console.WriteLine("Enter Your City : ");
+                        contact.City = Console.ReadLine();
+
+                        Console.WriteLine("Enter Your State : ");
+                        contact.State = Console.ReadLine();
+
+                        Console.WriteLine("Enter Your Zip Code : ");
+                        contact.Zip = Console.ReadLine();
+
+                        Console.WriteLine("Enter Your Phone Number : ");
+                        contact.PhoneNumber = Console.ReadLine();
+
+                        Console.WriteLine("Enter Your Email : ");
+                        contact.Email = Console.ReadLine();
                         break;
                     case 2:
-                        addContact.Display();
+                        addContact.AddContactToAddressBook(contact);
                         break;
                     case 3:
                         end = false;
