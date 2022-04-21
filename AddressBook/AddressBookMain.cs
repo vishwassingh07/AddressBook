@@ -100,7 +100,6 @@ namespace AddressBook
                         case 8:
                             Console.WriteLine("you chose not to edit the contact");
                             break;
-
                     }
                 }
                 Display();
