@@ -7,8 +7,10 @@ namespace AddressBook
         {
             Console.WriteLine("Welcome To Adress Book Program :");
             bool end = true;
-            Console.WriteLine("1. Add Contact\n2. Add Contact To Adress Book\n3. Edit A Contact\n4. Delete Contact\n5. End Program ");
+            Console.WriteLine("1. Add Contact\n2. Add Contact To Adress Book\n3. Edit A Contact\n4. Delete Contact\n5." +
+                "Add Dictionary\n6. Edit Dictioary\n7. Delete Dictionary\n8.  End Program ");
             Contact contact = new Contact();
+   
             AddressBookMain addContact = new AddressBookMain();
            
             while (end)
@@ -18,40 +20,33 @@ namespace AddressBook
                 switch (option)
                 {
                     case 1:
-                        Console.WriteLine("Enter Your First Name : ");
-                        contact.FirstName = Console.ReadLine();
-
-                        Console.WriteLine("Enter Your Last Name : ");
-                        contact.LastName = Console.ReadLine();
-
-                        Console.WriteLine("Enter Your Address : ");
-                        contact.Address = Console.ReadLine();
-
-                        Console.WriteLine("Enter Your City : ");
-                        contact.City = Console.ReadLine();
-
-                        Console.WriteLine("Enter Your State : ");
-                        contact.State = Console.ReadLine();
-
-                        Console.WriteLine("Enter Your Zip Code : ");
-                        contact.Zip = Console.ReadLine();
-
-                        Console.WriteLine("Enter Your Phone Number : ");
-                        contact.PhoneNumber = Console.ReadLine();
-
-                        Console.WriteLine("Enter Your Email : ");
-                        contact.Email = Console.ReadLine();
+                        addContact.Display();
                         break;
                     case 2:
                         addContact.AddContactToAddressBook(contact);
                         break;
                     case 3:
-                        addContact.EditContact();
+                        string name = Console.ReadLine();
+                        addContact.EditContact(name);
                         break;
                     case 4:
-                        addContact.DeleteTheContact();
+                        string name2 = Console.ReadLine();
+                        addContact.DeleteTheContact(name2);
                         break;
                     case 5:
+                        addContact.AddContactToAddressBook(contact);
+                        break;
+                    case 6:
+                        string name3 = Console.ReadLine();
+                        string contactName = Console.ReadLine();
+                        addContact.EditDictionary(name3 , contactName);
+                        break;
+                    case 7:
+                        string name4 = Console.ReadLine();
+                        string contactName2 = Console.ReadLine();
+                        addContact.DeleteFromDictionary(name4, contactName2);
+                        break;
+                    case 8:
                         end = false;
                         break;
                     default:
